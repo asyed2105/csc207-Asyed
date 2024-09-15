@@ -83,3 +83,123 @@ main()
        - **while (condition) {code}**
            - The code will be repeatedly executed until the condition becomes false.
        - **for (initialization statement; condition; loop statement) {code}**
+           - The code will be repeatedly executed until the condition becomes false.
+       - ** for (Type variable : collection) { code }**
+           - The code will be executed once for each element in the collection.
+           - Each execution, variable will be assigned to the next element of collection.
+           -  Known as the “for-each” loop. This form is useful for iterating over members of a collection, similar to how you might use for a in array in Python.
+
+```
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
+
+public class Histo {
+
+    public static void main(String[] args) {
+        Scanner data = null;
+        ArrayList<Integer> count;
+        Integer idx;
+
+        try {
+                data = new Scanner(new File("test.dat"));
+        }
+        catch ( IOException e) {
+            System.out.println("Unable to open data file");
+            e.printStackTrace();
+            System.exit(0);
+        }
+
+        count = new ArrayList<Integer>(10);
+        for (Integer i = 0; i < 10; i++) {
+            count.add(i,0);
+        }
+
+        while(data.hasNextInt()) {
+            idx = data.nextInt();
+            count.set(idx,count.get(idx)+1);
+        }
+
+        idx = 0;
+        for(Integer i : count) {
+            System.out.println(idx + " occured " + i + " times.");
+            idx++;
+        }
+    }
+}
+```
+- Lets see wtf is going on :)
+-  Declared the variables
+-  In this example we are declaring a **Scanner variable** called data, an **integer** called idx and an** ArrayList ** called count.
+    -  However, there is a new twist to the ArrayList declaration.
+    -  Unlike Python where lists can contain just about anything, in Java we can let to the _**compiler know what kind of objects our array list is going to contain**_ .
+        - the syntax we use to declare what kind of object the list will contain is the <Type> syntax.
+              - TECHNICALLY, you don't have to declare the array type list, the complier will just send you warning message
+<br>
+- Lines 13—20 are** required to open the file**.
+    - Why so many lines to open a file in Java?
+    - The additional code mainly comes from the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error.
+<br>
+- On line 22 we create our ArrayList and give it an initial size of 10.
+    - Strictly speaking, it is not necessary to give the ArrayList any size.
+    - It will grow or shrink dynamically as needed, just like a list in Python. On line 23 we start the first of three loops.
+-  The for loop on lines 23–25 serves the same purpose as the Python statement count = [0]*10, that is it initializes the first 10 positions in the ArrayList to hold the value 0.
+<br>
+-FOR LOOP syntax:
+    - (Integer i = 0; i < 10; i++) is **exactly equivalent** for i in range(10)
+        - first declare datatype of integer and set its value
+        - then set for loop condition
+        - i++ ensures value in loop increases after each iteration ( i_++ is same as i=i+1 )
+<br>
+- Line 29 illustrates another important difference between Python and Java.
+    - Notice that in Java we can not write count[idx] = count[idx] + 1.
+    - This is because in **Java there is no overloading** of operators.
+    -  Everything except the most basic math and logical operations is done using methods.
+       - So, to set the value of an ArrayList element we use the set method.
+       -  The first parameter of set **indicates the index or position in the ArrayList we are going to change**.
+       -  The next parameter is the value we want to set.
+            - Notice that, once again, we cannot use the indexing square bracket operator to retrieve a value from the list, but we must use the get method.
+
+
+### Dictionary
+- Java is an extra piece of shit and calls dictionaries **maps**
+- There are 2 different implementations of maps:
+      1. TreeMap
+          - uses a balanced binary trees
+  importing the TreeMap class
+  ```
+  import java.util.TreeMap;
+  ```
+  Creating a TreeMap
+
+  ```
+  TreeMap<KeyType, ValueType> map = new TreeMap<>();
+  ```
+  Adding elements
+  ```
+  map.put(KeyType key, ValueType value);
+  ```
+  Accessing elements
+  ```
+  ValueType value = map.get(KeyType key);
+  ```
+  Removing elements
+```
+map.remove(KeyType key);
+```
+Iterating over elements
+```
+for (Map.Entry<KeyType, ValueType> entry : map.entrySet()) {
+    KeyType key = entry.getKey();
+    ValueType value = entry.getValue();
+    System.out.println(key + ": " + value);
+}
+```
+Checking if a key/value exists
+```
+boolean hasKey = map.containsKey(KeyType key);
+boolean hasValue = map.containsValue(ValueType value);
+```
+      2. HashMap
+          - uses a hash table
