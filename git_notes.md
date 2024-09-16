@@ -39,3 +39,16 @@
 - git add file_name<br>
 - git commit -m "pushing"<br>
 - git push<br>
+
+***
+- you can make changes on another branch
+- then go back on main and merge the changes you make on the new branch to the main branch
+
+eg.
+git checkout -b new_branch_name
+-- make edits --
+git add file_name
+git commit -m "trying"
+git checkout main
+git merge new_branch_name
+
