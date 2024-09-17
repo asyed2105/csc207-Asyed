@@ -11,6 +11,19 @@
       - IF you now call *git status*, it will say "changes to be committed" <br>
         - will say modified:   [file] <br>
     - YOU CAN ALSO WRITE FILE_PATH RATHER THAN NAME! <br>
+        - **BUT IF YOU DO, BE-FKING CAREFUL** <br>
+              - BE **VERY PERCISE WITH HOW YOU ADD THE FILES** <br>
+              - ADD THE **ACTUAL** FILE YOUR WORKING ON AND DO NOT JUST ADD THE THE FOLDER <br>
+                  -  eg. <br>
+                      - if we want to add/commit/push a file called Tree.Java <br>
+                      -  _**DONT DO THIS**_ : git add \Users\arous\IdeaProjects\CSC207_Lab2_Multiset-adt <br>
+                          - CSC207_Lab2_Multiset-adt **IS THE NAME OF THE WHOLE FOLDER WHICH INCLUDES \.idea** <br>
+                              - WE DONT WANT THE IDEA FOLDER <br>
+                      - _**DO THIS**_ : git add \Users\arous\IdeaProjects\CSC207_Lab2_Multiset-adt\scr\Tree.java <br>
+                          **_ OR_** <br>
+                      - _**DO THIS**_ : git add scr\Tree.java  ( the path might vary based on which folder your currently in but yah, MAKE SURE ACTUAL FILE_NAME THERE) <br>
+          
+                      
 
 ### git commit -m “[descriptive message]” <br>
 - commit your file and add a description for your new commit  <br>
