@@ -48,7 +48,7 @@
 ### git checkout 'name of new branch' <br>
 - switches you to another branch to work out of <br>
 
-## ** AFTER YOU MAKE CHANGES TO YOUR FILES AND WANT TO UPDATE YOUR REPO***: <br>
+## ** AFTER YOU MAKE CHANGES TO YOUR FILES AND WANT TO UPDATE YOUR REPO **: <br>
 - git add file_name<br>
 - git commit -m "pushing"<br>
 - git push<br>
@@ -58,10 +58,15 @@
 - then go back on main and merge the changes you make on the new branch to the main branch
 
 eg.
-git checkout -b new_branch_name
--- make edits --
-git add file_name
-git commit -m "trying"
-git checkout main
-git merge new_branch_name
+git checkout -b new_branch_name <br>
+-- make edits -- <br>
+git add file_name <br>
+git commit -m "trying" <br>
+git checkout main <br>
+git merge new_branch_name <br>
+
+### adding to repo from markus
+- add starter files to repository
+- ** go on Users/arous/IdeaProjects/test
+- git pull
 
