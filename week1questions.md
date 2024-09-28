@@ -88,10 +88,17 @@ Why version control???
         - 
 ### 10. What do the four states in the "git status" report mean?
 untracked -- YOU HAVE NEVER RAN A GIT COMMAND ON THE FILE
-staged --
-tracked --
-dirty/modified --
-### 10. What do these git commands mean?
+staged -- **git add** has been used ti add changes in this file to the next commit
+tracked -- committed b
+dirty/modified -- this file has CHANGES that have not been staged
+
+### 11. Basix workflow?? ( no branching)
+- Starting a project
+      - git clone <url>
+      
+    
+
+### 11. What do these git commands mean?
 clone --
 pull --
 add --
