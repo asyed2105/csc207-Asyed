@@ -4,7 +4,7 @@ float --> Float <br>
 double --> Double <br>
 char --> Char <br>
 boolean --> Boolean <br>
-
+/*
 ### Declaring variables
 -  Java is a statically typed language. In a statically typed language the association between a variable and the type of object the variable can refer to is determined when the variable is declared. <br>
 - Once the declaration is made it is an ERROR for a variable to refer to an object of any other type.
@@ -20,6 +20,8 @@ public class TempConv {
         Double cel;
         Scanner in;
     }
+
+    */
 ```
 
 ## Imports
